@@ -24,7 +24,8 @@ public class LinkedListPractice<T> {
 
 	public static void main(String[] args) {
 		LinkedListPractice<String> list = new LinkedListPractice<String>();
-
+		System.out.println("Size of linked list is :" + list.size()+" and list is: "+list.toString());
+		
 		list.insert(list, "10");
 		list.insert(list, "20");
 		list.insert(list, "Bhola");
@@ -55,7 +56,7 @@ public class LinkedListPractice<T> {
 		}
 
 		System.out.println("List data after inserting at end= " + ln.data);
-		System.out.println("Size of linked list is :" + list.length);
+		System.out.println("Size of linked list is :" + list.size());
 		System.out.println("List :- " + list.toString());
 	}
 
@@ -148,6 +149,24 @@ public class LinkedListPractice<T> {
 				temp = temp.next;
 			}
 			return listOutput + "]";
+		}
+	}
+	
+	public int size()
+	{
+		int size =0;
+		if(head ==null) {
+			size =0;
+			return size;
+		}
+		else {
+			size=1;
+			ListNode<?> tempNode = head;
+			while(tempNode.next !=null) {
+				tempNode=tempNode.next;
+				size++;
+			}
+			return size;
 		}
 	}
 }
